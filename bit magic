@@ -1,0 +1,133 @@
+bit manupulation
+
+&
+|
+^
+~(
+<<(ignoring leading left shift and add zero at the end)(x * 2 power y)
+>>(ignore ending  and right shift and adding leading zeros(x/2powery)
+
+kth bit is set
+
+n&1<<(k-1) !=0
+
+n>>(k-1)&1==1
+
+count total set bits
+while(n>0)
+{
+res=res+(n&1);
+n=n>>1;
+}
+return res;
+theta(n)
+
+
+brain kerningams algorithm
+
+while(n>0)
+{
+n=n&n-1;
+res++;
+}
+O(setbits);
+
+looktablemethod for 32 bits
+
+
+
+power of 2
+return (n!=0 && n&(n-1)==0
+
+
+to check odd and even number
+if last bit is 1 it is odd else even
+if(x&1)
+cout<<odd;
+elsecout<<even;
+
+
+to get ith bit
+we do
+return ((1<<i)&x) >0?1:0;
+
+
+to set ith bit
+n=n|(1<<i);
+
+
+clear ith bit
+mask=i<<i;
+mask=~(mask);
+return (n&mask);
+
+
+update ith bit;
+clearth ith bit
+int mask=(v<<i);
+return n|mask;
+
+
+clear last i bits
+int mask=-1<<i;
+n=n&mask;
+
+
+
+
+
+fast exponenation using bitmasking
+int ans=1;
+while(n>0)
+{
+last_bit=n&1;
+if(last_bit)
+{
+ans=ans*a;
+}
+a=a*a;
+n=n>>1;
+}
+return ans;
+
+
+p=p+__builtin_popcount(i);   //return set bits 
+
+
+0xAAAAAAAA   //32 bit number with even bit set as 1 and odd bit as 0
+0x55555555   //32 bit number with odd bit set as 1 and even bit as 0
+
+
+
+
+
+
+count total bits
+binary to gray
+gray to binary
+maximum and value
+
+
+unsigned int swapBits(unsigned int x)
+{
+    for(int i=0; i<32; i+=2){
+        int i_bit = ( x >> i ) & 1; // find i th bit
+        int i_1_bit = (x >> ( i+1 )) & 1;  // find i+1 th bit
+         
+        x = x - ( i_bit << i) // remove i_bit
+              - ( i_1_bit << ( i+1 ) ) // remove i+1 th bit
+              + ( i_bit << ( i+1 ) ) // put i_bit at i+1 location
+              + ( i_1_bit << i );  // put i+1 bit at i location
+    }hu
+    return x;
+}
+ 
+
+binary to gray code
+
+n^(n>>1);
+
+
+
+
+
